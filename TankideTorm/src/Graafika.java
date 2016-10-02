@@ -1,5 +1,13 @@
 import java.io.IOException;
 
+public class Visual{
+	static String welcomescreen=
+			 "################################################################################"
+			+"#                                                                              #"
+			+"##"
+			;
+}
+
 public class Graafika {
 	{
 	try {
