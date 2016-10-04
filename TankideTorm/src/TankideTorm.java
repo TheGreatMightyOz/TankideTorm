@@ -3,7 +3,11 @@ import java.util.ArrayList;
 public class TankideTorm {
 
 	public static void main(String[] args) throws Exception {
-		System.out.println(System.getProperty("user.dir"));
+		//Sets buffer size
+		new Graafika(Integer.parseInt(args[0]),Integer.parseInt(args[1]));
+		//Shows welcome message
+		Graafika.welcome();
+		//System.out.println(System.getProperty("user.dir"));
 		java.io.File file = new java.io.File("TankideKaart.txt");
 		java.util.Scanner sc = new java.util.Scanner(file, "UTF-8");
 		ArrayList<ArrayList<Character>> board = new ArrayList<ArrayList<Character>>();
