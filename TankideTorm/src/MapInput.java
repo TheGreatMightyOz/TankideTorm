@@ -3,7 +3,7 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-public class MapInput {
+public class MapInput { // Reads the map from a text file and creates an ArrayList<ArrayList<char>> type board that it assigns to GameBoard
 	public static void readMap(String filename) throws FileNotFoundException{
 		java.io.File file = new java.io.File(filename);
 		java.util.Scanner sc = new java.util.Scanner(file, "UTF-8");

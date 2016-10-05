@@ -9,6 +9,14 @@ public class TankideTorm {
 		Graafika.welcome();
 		//System.out.println(System.getProperty("user.dir"));
 		MapInput.readMap("Tankidetorm.txt");
+		
+		
+		String[] playerNameList = {"Mängur"}; //Loo meetod mängijate (nimede) sisestamiseks
+		
+		
+		GameBoard.genPlayerList(playerNameList);
+		GameBoard.spawnPlayers();
+		
 	}
 
 }

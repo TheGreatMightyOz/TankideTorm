@@ -3,7 +3,7 @@
 public class Player {
 	private int[] location;
 	private String name;
-	private char icon;
+	private char icon; // The first letter of the name, the letter that is displayed on the map
 	
 	public int[] getLocation() {
 		return location;
