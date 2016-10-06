@@ -11,20 +11,36 @@ public class Graafika{
 
 	public static void welcome(){
 		//Path path = Paths.get(System.getProperty("user.dir").toString());
-		GraphicOutput.OutCharArray(GraphicInput.GetCharArray(x,y,"resource/welcome"));
+		char[][] frame = GraphicInput.GetCharArray(x,y,"resource/welcome");
+		new WelcomeTorm(x,y);
+		for(int i=0; i<2000; ++i){
+			GraphicOutput.OutCharArray(frame);
+			frame=WelcomeTorm.sand(frame, x ,y);
+			try {
+				TimeUnit.MILLISECONDS.sleep(100);
+				TermCom.clean();
+			} catch (InterruptedException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		try {
-			TimeUnit.SECONDS.sleep(10);
-		} catch (InterruptedException e) {
+			TermCom.setColor("08");
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException | IOException e) {
 			e.printStackTrace();
 		}
 		try {
-			clean();
+			TermCom.setColor("8F");
+			TimeUnit.MILLISECONDS.sleep(50);
+			TermCom.setColor("F8");
+			TimeUnit.MILLISECONDS.sleep(50);
+			TermCom.setColor("07");
+			TimeUnit.SECONDS.sleep(3);
+			TermCom.clean();
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
-	public static void clean()throws IOException, InterruptedException {
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-    }
 }
 
