@@ -10,6 +10,8 @@ public class GameBoard{
 	private static char filledTile = '#';
 	private static char emptyTile = '.';
 	private static int baseDamage = 1;
+	private static int baseRamDamage = 1;
+	private static int missileDistTravelledPerTurn = 3;
 	
 	
 	private static ArrayList<Player> playerList;
@@ -60,6 +62,10 @@ public class GameBoard{
 		for (Player player: playerList){
 			changeTileBoard(player.getLocation(), player.getIcon());
 		}
+	}
+	
+	public static void addMissile(int[] location, int height){
+		boardTargeted.get(location[0]).get(location[1]).add(height);
 	}
 	
 	public static void changeTileBoardTargeted(int[] location, int sqInt){ // 3-dimensional location is needed here
@@ -173,4 +179,28 @@ public class GameBoard{
 	public static ArrayList<ArrayList<Character>> getBoard() {
 		return board;
 	}
+
+	public static char getStartingTileType() {
+		return startingTileType;
+	}
+
+	public static char getFilledTile() {
+		return filledTile;
+	}
+
+	public static char getEmptyTile() {
+		return emptyTile;
+	}
+
+	public static int getBaseDamage() {
+		return baseDamage;
+	}
+	public static int getBaseRamDamage() {
+		return baseRamDamage;
+	}
+
+	public static int getMissileDistTravelledPerTurn() {
+		return missileDistTravelledPerTurn;
+	}
+	
 }
