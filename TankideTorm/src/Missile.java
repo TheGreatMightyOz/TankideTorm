@@ -29,7 +29,6 @@ public class Missile {
 		for(Missile missile: missileArray){ // Generates an array of possible missile locations
 			missileLocations.add(missile.getLocation());
 		}
-		System.out.println(missileLocations);
 		for (int i = 0; i<GameBoard.getBoardHeight(); i++){
 			for (int j = 0; j < GameBoard.getBoardWidth(); j++){
 				int[] location = {GameBoard.getBoardWidth()-1-i,j};
