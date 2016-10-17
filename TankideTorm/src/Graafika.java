@@ -51,7 +51,6 @@ public class Graafika{
 				try {
 					TermCom.setColor("B9");
 					GraphicOutput.OutCharArray(frame);
-					TimeUnit.SECONDS.sleep(3);
 					break;
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -61,7 +60,6 @@ public class Graafika{
 				try {
 					TermCom.setColor("E6");
 					GraphicOutput.OutCharArray(frame);
-					TimeUnit.SECONDS.sleep(3);
 					break;
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -71,7 +69,6 @@ public class Graafika{
 				try {
 					TermCom.setColor("");
 					GraphicOutput.OutCharArray(frame);
-					TimeUnit.SECONDS.sleep(3);
 					break;
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -81,7 +78,6 @@ public class Graafika{
 				try {
 					TermCom.setColor("20");
 					GraphicOutput.OutCharArray(frame);
-					TimeUnit.SECONDS.sleep(3);
 					break;
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -95,7 +91,7 @@ public class Graafika{
 				GraphicOutput.OutCharArray(frame);
 			}
 			if(maptype.equalsIgnoreCase("6")){ // exit
-				break;
+				System.exit(0);
 			}
 		}
 	}
