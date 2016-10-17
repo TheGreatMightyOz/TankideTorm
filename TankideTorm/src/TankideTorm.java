@@ -4,13 +4,13 @@ public class TankideTorm {
 
 	public static void main(String[] args) throws Exception {
 		//Screen constants
-		//int x=150;
-		//int y=50;
+		int x=150;
+		int y=50;
 		  //Sets buffer size
-		//TermCom.setScreen(x,y);
-		//new Graafika(x,y);
+		TermCom.setScreen(x,y);
+		new Graafika(x,y);
 		  //Shows welcome message
-		//Graafika.welcome();
+		Graafika.welcome();
 
 		//System.out.println(System.getProperty("user.dir"));
 		MapInput.readMap(); // Reads map from file (name input from user)
