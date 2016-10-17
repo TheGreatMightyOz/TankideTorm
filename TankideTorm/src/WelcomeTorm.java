@@ -12,17 +12,21 @@ public class WelcomeTorm {
 		for(int i=y-2; i>=0; --i){
 			for(int t=0; t<x; ++t){
 				if(sandmap[i][t]==1){
+					int dummy = 0;
+					for(int k=0; k<4; ++k){
 					//int[] direc = {-1,0,1};
-					int random = (int )(Math.random() * 4 - 2);
+						int random = (int )(Math.random() * 4 - 2);
 					//if(0<t+random & t+random<x){
-						if( frame[i+1][((t+random)%x+x)%x]==' '){
+						if( frame[i+1][((t+random)%x+x)%x]==' ' & dummy==0){
 							frame[i][t]=' ';
 							sandmap[i][t]=0;
 							frame[i+1][((t+random)%x+x)%x]='@';
 							sandmap[i+1][((t+random)%x+x)%x]=1;
+							dummy=1;
 						}
+					}
 					//}
-					else if(frame[i+1][t]==' '){
+					if(frame[i+1][t]==' ' & dummy==0){
 						frame[i][t]=' ';
 						frame[i+1][t]='@';
 						sandmap[i][t]=0;
