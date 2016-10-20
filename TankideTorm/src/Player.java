@@ -116,7 +116,7 @@ public class Player {
 				System.out.println("Something was in the way! ");
 				this.takeDamage(GameBoard.getBaseRamDamage());
 				if (GameBoard.getTileBoard(newLoc) != GameBoard.getFilledTile()){
-					GameBoard.getPlayer(GameBoard.getTileBoard(newLoc)).takeDamage(GameBoard.getBaseMissileDamage());
+					GameBoard.getPlayer(GameBoard.getTileBoard(newLoc)).takeDamage(Missile.getBaseMissileDamage());
 				}
 			}
 		}
@@ -124,7 +124,7 @@ public class Player {
 			if (length == 0) {
 				Missile.addMissile(this, newLoc, 1); // Minimum height for missile
 			} else {
-				Missile.addMissile(this, newLoc, (length+GameBoard.getMissileDistTravelledPerTurn()-1)/GameBoard.getMissileDistTravelledPerTurn());
+				Missile.addMissile(this, newLoc, (length+Missile.getMissileDistTravelledPerTurn()-1)/Missile.getMissileDistTravelledPerTurn());
 			}
 		}
 
