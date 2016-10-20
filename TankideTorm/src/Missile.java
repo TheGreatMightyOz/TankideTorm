@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Missile {
@@ -9,10 +8,10 @@ public class Missile {
 	private static int baseMissileDamage = 1;
 	private static int missileDistTravelledPerTurn = 3;
 	
-	private static ArrayList<Missile> missileArray = new ArrayList<Missile>();
+	private static ArrayList<Missile> missileArray = new ArrayList<Missile>(); // The array of all airborne missiles
 	
 	
-	public static int getLowestMissileHeight(int[] location){
+	public static int getLowestMissileHeight(int[] location){ //Returns the height of the lowest missile targeting location
 		int minHeight = 999999999;
 		for (Missile missile: missileArray){
 			if (missile.getLocation()[0] == location[0] && missile.getLocation()[1] == location[1]){
@@ -91,4 +90,17 @@ public class Missile {
 	public int[] getLocation(){
 		return location;
 	}
+
+	public static int getSplash() {
+		return splash;
+	}
+
+	public static int getBaseMissileDamage() {
+		return baseMissileDamage;
+	}
+
+	public static int getMissileDistTravelledPerTurn() {
+		return missileDistTravelledPerTurn;
+	}
+	
 }
