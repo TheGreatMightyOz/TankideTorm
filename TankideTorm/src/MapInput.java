@@ -32,6 +32,5 @@ public class MapInput { // Reads the map from a text file and creates an ArrayLi
 		}
 		//sc.close();
 		GameBoard.setBoard(board);
-		GameBoard.genBoardTilesTargeted();
 	}
 }
