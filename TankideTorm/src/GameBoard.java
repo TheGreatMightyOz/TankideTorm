@@ -6,21 +6,16 @@ public class GameBoard{
 	private static int boardWidth;
 	public static int boardHeight;
 	private static char startingTile = '$';
-	private static int splash = 1; // Moved over to Missile.java
+	
 	private static char filledTile = '#';
 	private static char emptyTile = '.';
-	private static int baseMissileDamage = 1; // moved over to Missile.java
 	private static int baseRamDamage = 1;
-	private static int missileDistTravelledPerTurn = 3; // moved over to Missile.java
+
 	
 	
 	private static ArrayList<Player> playerList = new ArrayList<Player>();
 	private static ArrayList<ArrayList<Character>> board;
-	//private static ArrayList<Missile> missileArray = new ArrayList<Missile>();
-	
-	//REDUNDANT
-	private static ArrayList<ArrayList<ArrayList<Integer>>> boardTargeted = new ArrayList<ArrayList<ArrayList<Integer>>>();
-	
+
 	
 	
 	
@@ -58,9 +53,7 @@ public class GameBoard{
 		return board.get(location[0]).get(location[1]);
 	}
 	
-	public static ArrayList<Integer> getTileBoardTargeted(int[] location){ // Returns a list of missiles' heights targeting tile at location
-		return boardTargeted.get(location[0]).get(location[1]);
-	}
+
 	
 	
 	public static ArrayList<int[]> findStartingTiles(){ // Creates list of the locations of all starting tiles
@@ -98,10 +91,7 @@ public class GameBoard{
 		}
 	}
 	
-	
-	public static void changeTileBoardTargeted(int[] location, int sqInt){ // 3-dimensional location is needed here, changes the missile's height (time until impact)
-		boardTargeted.get(location[0]).get(location[1]).set(location[2], sqInt);
-	}
+
 	
 	public static void changeTileBoard(int[] location, Character sqType){ // Changes the tile type in location to sqType
 		board.get(location[0]).set(location[1], sqType);
@@ -111,16 +101,7 @@ public class GameBoard{
 		playerList.remove(player);
 	}
 	
-	public static void genBoardTilesTargeted(){ // Generates a new (empty) board that shows which tiles are being targeted
-		for (int y = 0; y < boardHeight; y++){
-		ArrayList<ArrayList<Integer>> lineTemp = new ArrayList<ArrayList<Integer>>();
-			for (int x = 0; x < boardWidth; x++){
-				lineTemp.add(new ArrayList<Integer>());
-			}
-			boardTargeted.add(lineTemp);
-		}
-	}
-	
+
 	public static Player getPlayer(char icon){
 		for(Player player: playerList){
 			if (player.getIcon() == icon){
@@ -150,48 +131,7 @@ public class GameBoard{
 		return playersSur;
 	}
 	
-	public static void displayBoardTargeted(){ //For bugtesting purposes
-		for(int i = 0; i < boardHeight; i++){
-			for (int j = 0; j < boardWidth; j++){
-				int[] location = {boardHeight-i-1, j};
-				if (getTileBoardTargeted(location).size() > 0){
-					System.out.print(getTileBoardTargeted(location).get(0));
-				} else {
-					System.out.print("-");
-				}
-			}
-			System.out.println();
-		}
-	}
 	
-
-	
-	public static void refreshTurn(){ // REDUNDANT // Ticks down all missiles. Deals damage to players when missiles land near them
-		for (int x = 0; x < boardWidth; x++){
-			for (int y = 0; y < boardHeight; y++){
-				int[] location = {x, y};
-				ArrayList<Integer> indexesRemoved = new ArrayList<Integer>(); // All missiles to be removed are added to a list so indexes don't get misplaced in the removal
-				
-				ArrayList<Integer> tileTargetedArray =getTileBoardTargeted(location) ;
-				for (int z = 0; z < tileTargetedArray.size(); z++){
-					int[] location3d = {x, y, z};
-					int tileTargeted = tileTargetedArray.get(z);
-					if (tileTargeted > 0) {
-						changeTileBoardTargeted(location3d, tileTargeted-1);
-					} else {
-						ArrayList<Player> playersSur = getPlayersSurroundingTile(location, splash);
-						for (Player player: playersSur){
-							player.takeDamage(baseMissileDamage);
-						}
-						indexesRemoved.add(0, z);
-					}
-				}
-				for (Integer z: indexesRemoved){
-					boardTargeted.get(x).get(y).remove(z);
-				}
-			}
-		}
-	}
 	
 	public static void nextTurn(){ // Method for taking one turn
 		ArrayList<Player> tempPlayerList = new ArrayList<Player>();
@@ -256,19 +196,9 @@ public class GameBoard{
 		return emptyTile;
 	}
 
-	public static int getBaseMissileDamage() {
-		return baseMissileDamage;
-	}
 	public static int getBaseRamDamage() {
 		return baseRamDamage;
 	}
 
-	public static int getMissileDistTravelledPerTurn() {
-		return missileDistTravelledPerTurn;
-	}
-	
-	public static int getSplash(){
-		return splash;
-	}
 	
 }
