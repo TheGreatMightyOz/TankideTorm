@@ -18,7 +18,7 @@ public class Graafika{
 		while(System.in.available() == 0){
 			GraphicOutput.OutCharArray(frame);
 			frame=WelcomeTorm.sand(frame, x ,y);
-			frame=Footer.set_footer(frame,x, y, "Press Enter to continue");
+			frame=FormatOutput.set_footer(frame,x, y, "Press Enter to continue");
 			try {
 				TimeUnit.MILLISECONDS.sleep(100);
 				TermCom.clean();
@@ -51,6 +51,7 @@ public class Graafika{
 				try {
 					TermCom.setColor("B9");
 					GraphicOutput.OutCharArray(frame);
+					TimeUnit.SECONDS.sleep(3);
 					break;
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -60,6 +61,7 @@ public class Graafika{
 				try {
 					TermCom.setColor("E6");
 					GraphicOutput.OutCharArray(frame);
+					TimeUnit.SECONDS.sleep(3);
 					break;
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -69,6 +71,7 @@ public class Graafika{
 				try {
 					TermCom.setColor("");
 					GraphicOutput.OutCharArray(frame);
+					TimeUnit.SECONDS.sleep(3);
 					break;
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -78,6 +81,7 @@ public class Graafika{
 				try {
 					TermCom.setColor("20");
 					GraphicOutput.OutCharArray(frame);
+					TimeUnit.SECONDS.sleep(3);
 					break;
 				} catch (InterruptedException e) {
 					e.printStackTrace();
