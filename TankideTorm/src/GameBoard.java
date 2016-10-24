@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,14 +20,22 @@ public class GameBoard{
 	
 	
 	
-	public static void displayBoard(){ // Prints out the board (temporary method)
+	public static void displayBoard() throws IOException, InterruptedException{ // Prints out the board (temporary method)
+		char[][] map = new char[boardHeight][boardWidth];
+		TermCom.clean();
+		FormatOutput.setLastFrame(FormatOutput.set_empty(150, 50));
 		for(int i = 0; i < boardHeight; i++){
 			for (int j = 0; j < boardWidth; j++){
 				int[] location = {boardHeight-i-1, j};
-				System.out.print(getTileBoard(location));
+				map[i][j]=getTileBoard(location);
+				//System.out.print(getTileBoard(location));
 			}
-			System.out.println();
+			
+			//System.out.println();
 		}
+		//FormatOutput.set_map(map);
+		//GraphicOutput.OutCharArray(FormatOutput.set_empty(50, 150));
+		GraphicOutput.OutCharArray(FormatOutput.set_map(map));
 	}
 	
 	public static void removeStartingTiles(){ // Removes the tiles that mark starting tiles from the board
@@ -36,12 +45,12 @@ public class GameBoard{
 		}
 	}
 	
-	public static void startGame(){ // The method for the match
+	public static void startGame() throws IOException, InterruptedException{ // The method for the match
 		int isGame = 1;
 		removeStartingTiles();
 		while (isGame == 1){
 			nextTurn();
-			if (playerList.size() == 0){
+			if (playerList.size() == 1){
 				isGame = 0;
 				System.out.println("The game has ended!");
 			}
@@ -133,7 +142,7 @@ public class GameBoard{
 	
 	
 	
-	public static void nextTurn(){ // Method for taking one turn
+	public static void nextTurn() throws IOException, InterruptedException{ // Method for taking one turn
 		ArrayList<Player> tempPlayerList = new ArrayList<Player>();
 		for(Player player: playerList){
 			tempPlayerList.add(player);
@@ -198,6 +207,10 @@ public class GameBoard{
 
 	public static int getBaseRamDamage() {
 		return baseRamDamage;
+	}
+
+	public static ArrayList<Player> getPlayerList() {
+		return playerList;
 	}
 
 	
