@@ -24,6 +24,8 @@ public class Missile {
 	}
 	
 	public static void displayBoardMissiles(){
+		char[][] map = new char[GameBoard.getBoardHeight()][GameBoard.getBoardWidth()];
+		FormatOutput.setLastFrame(FormatOutput.set_empty(150, 50));
 		ArrayList<int[]> missileLocations = new ArrayList<>();
 		for(Missile missile: missileArray){ // Generates an array of possible missile locations
 			missileLocations.add(missile.getLocation());
@@ -37,19 +39,23 @@ public class Missile {
 						locationFound = 1;
 						int height = getLowestMissileHeight(location);
 						if (height > 9){
-							System.out.print("+");
+							map[i][j]='+';
+							//System.out.print("+");
 						} else {
-							System.out.print(height);
+							map[i][j]=(char)height;
+							//System.out.print(height);
 						}
 						break;
 					}
 				}
 				if (locationFound == 0) {
-					System.out.print(GameBoard.getTileBoard(location));
+					map[i][j]=GameBoard.getTileBoard(location);
+					//System.out.print(GameBoard.getTileBoard(location));
 				}
 			}
-			System.out.println();
+			//System.out.println();
 		}
+		GraphicOutput.OutCharArray(FormatOutput.set_map(map));
 	}
 	
 	public static void tickDownMissiles(Player player){ // Ticks down all missiles launched by player
