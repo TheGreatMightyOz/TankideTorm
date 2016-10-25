@@ -6,7 +6,7 @@ public class Missile {
 	private int height;
 	private static int splash = 1;
 	private static int baseMissileDamage = 1;
-	private static int missileDistTravelledPerTurn = 3;
+	private static int missileDistTravelledPerTurn = 5;
 	
 	private static ArrayList<Missile> missileArray = new ArrayList<Missile>(); // The array of all airborne missiles
 	
@@ -42,7 +42,7 @@ public class Missile {
 							map[i][j]='+';
 							//System.out.print("+");
 						} else {
-							map[i][j]=(char)height;
+							map[i][j]=(char)(height+48);
 							//System.out.print(height);
 						}
 						break;
