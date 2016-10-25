@@ -8,8 +8,8 @@ The aim of this game is to destroy enemy's tank and survive.
 
 <h2>Manual:</h2>
 <ul>
-<li>To start a game in <strong>WinOs</strong> execute /scr/start.bat.
-To play in Unix os you will have to change .bat file.</li>
+<li>First you will have to compile all .java files.</li>
+<li>To start a game in <strong>WinOs</strong> move start.bat and all txt files and resource folder where you compiled files to.</li>
 <li>Game works by writing commands.</li>
 </ul>
 
