@@ -9,7 +9,7 @@ The aim of this game is to destroy enemy's tank and survive.
 <h2>Manual:</h2>
 <ul>
 <li>First you will have to compile all .java files.</li>
-<li>To start a game in <strong>WinOs</strong> move start.bat and all txt files and resource folder where you compiled files to.</li>
+<li>To start a game in <strong>WinOs</strong> move start.bat and all txt files and resource folder where you compiled files to. Execute start.bat.</li>
 <li>Game works by writing commands.</li>
 </ul>
 
