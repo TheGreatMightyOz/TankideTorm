@@ -7,4 +7,15 @@
 
                                                      Help menu
                                              
-                                                 No help provided.
+                                           By starting game you have to choose the amount of players
+                                           and give names to them. NAMES MUST START WITH DIFFERENT LETTERS.
+
+                                           Default map name is tk.txt
+
+                                           IN GAME COMMANDS:
+                                           fire - fires missile. Missiles have a splash radius of one.
+                                           move - moves 1 square
+
+                                           Directions are 8 cardinal directions (N, NE, ...)
+
+                                           Good Luck!
