@@ -8,7 +8,7 @@ public class MapInput { // Reads the map from a text file and creates an ArrayLi
 		String fileName = scUser.nextLine();
 		//scUser.close();
 		
-		if (fileName.equals("")) fileName = "TankideKaart1.txt";
+		if (fileName.equals("")) fileName = "tk.txt";
 		java.io.File file = new java.io.File(fileName);
 		java.util.Scanner sc = new java.util.Scanner(file, "UTF-8");
 		ArrayList<ArrayList<Character>> boardTemp = new ArrayList<ArrayList<Character>>();
