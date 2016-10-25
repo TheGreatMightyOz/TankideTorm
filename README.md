@@ -15,17 +15,14 @@ To play in Unix os you will have to change .bat file.</li>
 
 <h2>Ingame Commands:</h2>
 
-1. help - shows this list.
-2. new game - starts new game
-3. move {dir} - moves 1 square towards {dir}
-4. shoot {dir} - shoots towards {dir}
-5. pass - skip a turn
-6. exit
+
+1. move - moves 1 square
+2. fire - fires missile
 
 Possible {dir} values with directions:
 
 
-| q | w | e |
-|---|---|---|
-| a | - | d |
-| z | x | c |
+| NW | N | NE |
+|----|---|----|
+| W  | - |  E |
+| SW | S | SE |
