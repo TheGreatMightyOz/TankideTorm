@@ -17,7 +17,7 @@ To play in Unix os you will have to change .bat file.</li>
 
 
 1. move - moves 1 square
-2. fire - fires missile
+2. fire - fires missile. Missiles go through walls.
 
 Possible {dir} values with directions:
 
