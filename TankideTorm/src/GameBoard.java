@@ -149,7 +149,7 @@ public class GameBoard{
 		}
 		for(Player player: tempPlayerList){
 			Missile.tickDownMissiles(player);
-			displayBoard();
+			//displayBoard();
 			Missile.displayBoardMissiles();
 			// displayBoardTargeted();
 			if (playerList.contains(player)){ // If the player was destroyed before he took a turn, this will ensure that he can't take a turn
