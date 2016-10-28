@@ -18,7 +18,7 @@ public class Graafika{
 		while(System.in.available() == 0){
 			GraphicOutput.OutCharArray(frame);
 			frame=WelcomeTorm.sand(frame, x ,y);
-			frame=FormatOutput.set_footer(frame,x, y, "Press Enter to continue");
+			frame=FormatOutput.set_footer("Press Enter to continue");
 			try {
 				TimeUnit.MILLISECONDS.sleep(100);
 				TermCom.clean();
